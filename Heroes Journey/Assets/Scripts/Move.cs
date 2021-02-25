@@ -42,9 +42,9 @@ public class Move : MonoBehaviour
     
     void FlipPlayer(){
 
-        if(rb.velocity.x<-0.1f){      //moving to the left
+        if(rb.velocity.x<-0.01f){      //moving to the left
             sp.flipX=true;              // flip the character image (mirror)
-        }else if(rb.velocity.x>0.1f){    //moving to the right
+        }else if(rb.velocity.x>0.01f){    //moving to the right
             sp.flipX=false;             // character does not flip
         }
     }    
