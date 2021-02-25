@@ -12,12 +12,6 @@ public class Move : MonoBehaviour
 
     SpriteRenderer sp;  // variable of class SpriteRenderer
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void Awake(){  // run once, and instantiates objects
             rb = GetComponent<Rigidbody2D>();      // Rigidbody is attached to the player using the rb variable
             sp = GetComponent<SpriteRenderer>();    // Gives us access to spriterenderer
@@ -30,14 +24,14 @@ public class Move : MonoBehaviour
 
         //  transform.Translate(xInput * moveSpeed, yInput * moveSpeed, 0);   // applying the user defined speed to the input in x and y (i.e. left arrow move and applying 5 movespeed to that)
          transform.Translate(xInput * moveSpeed, 0, 0);   // applying the user defined speed to the input in x and y (i.e. left arrow move and applying 5 movespeed to that)
+        // transform.position += new Vector3(xInput, 0, 0) * Time.deltaTime * moveSpeed;
 
          PlatformMover();
-         FlipPlayer();
-         
+         FlipPlayer();   
     }
     
-    void PlatformMover() {
-        rb.velocity = new Vector2(moveSpeed * xInput, rb.velocity.y);  // this is moving to the right or left - creates direction vector.
+    void PlatformMover() { // velocity along y axis stays constant
+        rb.velocity = new Vector2(moveSpeed * xInput, rb.velocity.y);  // this is modifying the velocity and direction along x axis.
     }
     
     void FlipPlayer(){
@@ -48,7 +42,4 @@ public class Move : MonoBehaviour
             sp.flipX=false;             // character does not flip
         }
     }    
-
-    
-
 }
