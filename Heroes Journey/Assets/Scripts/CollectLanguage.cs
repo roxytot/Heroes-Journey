@@ -9,6 +9,7 @@ public class CollectLanguage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Language"))
         {
+            ScoreScript.scoreValue += 1;
             score += 1;
             Debug.Log(score);
         }

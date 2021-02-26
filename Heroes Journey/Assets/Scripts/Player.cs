@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
 void Die() {
     UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    ScoreScript.scoreValue = 0;
 }
     // Update is called once per frame
     void Update()
