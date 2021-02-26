@@ -9,7 +9,7 @@ public class Spikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       player = GameObject.FindGameObjectsWithTag("Player").GetComponent<Player>();
+       player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
         
     }
 
